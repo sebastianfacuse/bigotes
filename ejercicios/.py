@@ -8,7 +8,7 @@
 #     notas=notas+nota
 # promedio=notas/3
 # print("su promedio es", promedio)
-# #ejercicion2
+## #ejercicion2
 # bonus_1=1.04
 # bonus_2=1.06
 # bonus_3=1.08
@@ -39,3 +39,54 @@
 # elif goles >=7:
 #      sueldo_n2*bonus_3==sueldo_total
 #      print(f"su sueldo total esta temporada es {sueldo_total}")
+
+
+# pida al usuario numero infinitamente y 
+# muestre si son par o impar
+# para salir, ponga 0 (cero).
+# num=5
+
+while num!=0:
+    num=int(input("Ingrese un numero( cero para salir)"))
+    if num % 2==0:
+        print(f"El numero {num} es par")
+    else:
+        print(f"El numero {num} es impar")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
