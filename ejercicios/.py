@@ -45,13 +45,12 @@
 # muestre si son par o impar
 # para salir, ponga 0 (cero).
 # num=5
-
-while num!=0:
-    num=int(input("Ingrese un numero( cero para salir)"))
-    if num % 2==0:
-        print(f"El numero {num} es par")
-    else:
-        print(f"El numero {num} es impar")
+# while num!=0:
+#     num=int(input("Ingrese un numero( cero para salir)"))
+#     if num % 2==0:
+#         print(f"El numero {num} es par")
+#     else:
+#         print(f"El numero {num} es impar")
 
 
 

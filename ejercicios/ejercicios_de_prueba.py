@@ -99,12 +99,15 @@
 #      else:
 #           print(f"su credito es de {cont}")
 #####
-num1=int(input("ingrese un numero"))
-num2=0
-while num1>=num2:   
-    num2=int(input("ingrese otro numero que sea mayor al primero"))
-import random
-num_random=random.randint(num1,num2)
-print (f"el numero aleatorio es {num_random}")
-for i in range (num_random):
-    print("onichan")                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+
+# num1=int(input("ingrese un numero"))
+# num2=0
+# while num1>=num2:   
+#     num2=int(input("ingrese otro numero que sea mayor al primero"))
+# import random
+# num_random=random.randint(num1,num2)
+# print (f"el numero aleatorio es {num_random}")
+# for i in range (num_random):
+#     print("onichan")                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+
+
