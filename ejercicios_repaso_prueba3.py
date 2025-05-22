@@ -215,18 +215,17 @@ while True:
                                         break
             case 2:
                 while True:
+                    print("necesita dos diamantes y un palo para craftear una espada")
                     espada=int(input("""desea craftear una espada de diamante?
                                     1-si
                                     2-no"""))
                     match op:
                         case 1:
-                            print("necesita dos diamantes y un palo para craftear una espada")
-                            diamante-=2
-                            palo-=1
-                            if diamante>=1 or palo>=0:
+                            if diamante<=1 or palo<=0:
                                 print("usted no tiene recursos suficientes, consiga recursos para craftear una espada de diamante")
-                                break
                             elif diamante>=2 and palo>=1:
+                                palo-=1
+                                diamante-=2
                                 print("usted ha crafteado una espada de diamante")
                                 espada_diamante+=1
                                 print(f"espada de diamante={espada_diamante}")
