@@ -294,121 +294,217 @@
 #                         break
         
 
-def credito():
-    comuna=0
-    cont=0
-    arancel=200000
-    while comuna!=1 and comuna!=2 and comuna!=3 and comuna!=4 and comuna!=5:
-        print("""
-            1-la pintana
-            2-puente alto
-            3-la florida
-            4-san joaquin
-            5-otra comuna""")
-        comuna=int(input("ingrese su opcion"))
-        if comuna==1:
-            print("su descuento es del 30%")
-            cont+=30
-        elif comuna==2:
-            print("su descuento es del 25%")
-            cont+=25
-        elif comuna==3:
-            print("su descuento es del 20%")
-            cont+=20
-        elif comuna==4:
-            print("su descuento es del 15%")
-            cont+=20
-        elif comuna==5:
-            print("usted no tiene descuento")
-            cont+=0
-    grupo=0
-    while grupo!=1 and grupo!=2 and grupo!=3:
-        print("""
-            1-una persona
-            2-dos a cuatro personas
-            3-cinco personas o mas""")
-        grupo=int(input("ingrese su opcion"))
-        if grupo==1:
-            print("su descuento adicional es del 2%")
-            cont+=2
-        elif grupo==2:
-            print("su descuento adicional es del 3%")
-            cont+=3
-        elif grupo==3:
-            print("su descuento adicional es del 4%")
-            cont+=4
-    print(f"el descuento total es del {cont}%")
-    descuento_a=cont/100
-    op=descuento_a*arancel
-    print(f"el total a pagar es de {arancel-op} de {arancel}$")
-    op=0
-def goles():
-    bonus_1=1.04
-    bonus_2=1.06
-    bonus_3=1.08
-    bonus_4=1000
-    bonus_5=2000
-    bonus_6=3000
-    sueldo=float(input("cual es su sueldo base? "))
-    sueldo_n2=sueldo+bonus_4 or bonus_5 or bonus_6
-    sueldo_total=sueldo_n2*bonus_1 or bonus_2 or bonus_3
-    lugar_en_tabla=int(input("¿en que lugar quedo su equipo esta temporada? "))
-    if lugar_en_tabla >=9:
-        sueldo*bonus_4==sueldo_n2
-        print(f"su sueldo esta temporada es {sueldo_n2}")
-    elif lugar_en_tabla >=4 and lugar_en_tabla <=8:
-        sueldo*bonus_5==sueldo_n2
-        print(f"su sueldo esta temporada es {sueldo_n2}")
-    elif lugar_en_tabla >=1 and lugar_en_tabla <=3:
-        sueldo*bonus_6==sueldo_n2
-        print(f"su sueldo esta temporada es {sueldo_n2}")
-        #segunda parte
-    goles=int(input("cuantos goles marco esta temporada? "))
-    if goles>=1 and goles >=3:
-        sueldo_n2*bonus_1==sueldo_total
-        print(f"su sueldo total esta temporada es {sueldo_total}")
-    elif goles >=4 and goles <=6:
-        sueldo_n2*bonus_2==sueldo_total
-        print(f"su sueldo total esta temporada es {sueldo_total}")
-    elif goles >=7:
-        sueldo_n2*bonus_3==sueldo_total
-        print(f"su sueldo total esta temporada es {sueldo_total}")
-def par_impar():
-    num=5
-    cont1=0
-    cont2=0
-    while num!=0:
-        num=int(input("ingrese un numero o presione 0 para salir"))
-        if num %2== 0:
-            print(f"su numero {num} es par")
-            cont1+=1
-            print(f"y la cantidad de numeros que ingreso es {cont1}")
-        else:
-            print(f"su numero {num} es inpar")
-            cont2+=1
-            print(f"y la cantidad de numeros que ingreso es {cont2}")
-    print(f"la cantidad de numeros totales es {cont1+cont2}")
-def menu():
-    while True:
-        op=int(input("""ingrese el programa que desea ejecutar
-                1-credito
-                2-goles
-                3-numero par o impar
-                4-salir"""))
-        match op:
-            case 1:
-                    credito()
-            case 2:
-                    goles()
-            case 3:
-                    par_impar()
-            case 4:
-                    print("saliendo")
-                    break
-            case _:
-                    print("opcion invalida")
+# def credito():
+#     comuna=0
+#     cont=0
+#     arancel=200000
+#     while comuna!=1 and comuna!=2 and comuna!=3 and comuna!=4 and comuna!=5:
+#         print("""
+#             1-la pintana
+#             2-puente alto
+#             3-la florida
+#             4-san joaquin
+#             5-otra comuna""")
+#         comuna=int(input("ingrese su opcion"))
+#         if comuna==1:
+#             print("su descuento es del 30%")
+#             cont+=30
+#         elif comuna==2:
+#             print("su descuento es del 25%")
+#             cont+=25
+#         elif comuna==3:
+#             print("su descuento es del 20%")
+#             cont+=20
+#         elif comuna==4:
+#             print("su descuento es del 15%")
+#             cont+=20
+#         elif comuna==5:
+#             print("usted no tiene descuento")
+#             cont+=0
+#     grupo=0
+#     while grupo!=1 and grupo!=2 and grupo!=3:
+#         print("""
+#             1-una persona
+#             2-dos a cuatro personas
+#             3-cinco personas o mas""")
+#         grupo=int(input("ingrese su opcion"))
+#         if grupo==1:
+#             print("su descuento adicional es del 2%")
+#             cont+=2
+#         elif grupo==2:
+#             print("su descuento adicional es del 3%")
+#             cont+=3
+#         elif grupo==3:
+#             print("su descuento adicional es del 4%")
+#             cont+=4
+#     print(f"el descuento total es del {cont}%")
+#     descuento_a=cont/100
+#     op=descuento_a*arancel
+#     print(f"el total a pagar es de {arancel-op} de {arancel}$")
+#     op=0
+# def goles():
+#     bonus_1=1.04
+#     bonus_2=1.06
+#     bonus_3=1.08
+#     bonus_4=1000
+#     bonus_5=2000
+#     bonus_6=3000
+#     sueldo=float(input("cual es su sueldo base? "))
+#     sueldo_n2=sueldo+bonus_4 or bonus_5 or bonus_6
+#     sueldo_total=sueldo_n2*bonus_1 or bonus_2 or bonus_3
+#     lugar_en_tabla=int(input("¿en que lugar quedo su equipo esta temporada? "))
+#     if lugar_en_tabla >=9:
+#         sueldo*bonus_4==sueldo_n2
+#         print(f"su sueldo esta temporada es {sueldo_n2}")
+#     elif lugar_en_tabla >=4 and lugar_en_tabla <=8:
+#         sueldo*bonus_5==sueldo_n2
+#         print(f"su sueldo esta temporada es {sueldo_n2}")
+#     elif lugar_en_tabla >=1 and lugar_en_tabla <=3:
+#         sueldo*bonus_6==sueldo_n2
+#         print(f"su sueldo esta temporada es {sueldo_n2}")
+#         #segunda parte
+#     goles=int(input("cuantos goles marco esta temporada? "))
+#     if goles>=1 and goles >=3:
+#         sueldo_n2*bonus_1==sueldo_total
+#         print(f"su sueldo total esta temporada es {sueldo_total}")
+#     elif goles >=4 and goles <=6:
+#         sueldo_n2*bonus_2==sueldo_total
+#         print(f"su sueldo total esta temporada es {sueldo_total}")
+#     elif goles >=7:
+#         sueldo_n2*bonus_3==sueldo_total
+#         print(f"su sueldo total esta temporada es {sueldo_total}")
+# def par_impar():
+#     num=5
+#     cont1=0
+#     cont2=0
+#     while num!=0:
+#         num=int(input("ingrese un numero o presione 0 para salir"))
+#         if num %2== 0:
+#             print(f"su numero {num} es par")
+#             cont1+=1
+#             print(f"y la cantidad de numeros que ingreso es {cont1}")
+#         else:
+#             print(f"su numero {num} es inpar")
+#             cont2+=1
+#             print(f"y la cantidad de numeros que ingreso es {cont2}")
+#     print(f"la cantidad de numeros totales es {cont1+cont2}")
+# def menu():
+#     while True:
+#         op=int(input("""ingrese el programa que desea ejecutar
+#                 1-credito
+#                 2-goles
+#                 3-numero par o impar
+#                 4-salir"""))
+#         match op:
+#             case 1:
+#                     credito()
+#             case 2:
+#                     goles()
+#             case 3:
+#                     par_impar()
+#             case 4:
+#                     print("saliendo")
+#                     break
+#             case _:
+#                     print("opcion invalida")
                  
-menu()
+# menu()
+# ejercicio numero 1
+# numeros_primos = 0
+# numeros_no_primos = 0
+# cantidad_numeros = 0
+# i = 0
+
+# while True:
+#  try:
+#     cantidad_numeros = str(input("Ingrese la cantidad de números a verificar: "))
+
+#     print("*"*20)
+
+#  except Exception:
+#     print("debe ingresar un numero etero")
+      
+#  while True:
+#       for i in range (cantidad_numeros):
+#          if cantidad_numeros % 2 == 0:
+#             print("no es un numero primo: ")
+
+#             numeros_no_primos = numeros_no_primos + 1
+#             print("*"*20)
+
+#          else:
+#             print("es un numero primo: ")
+
+#             numeros_primos = numeros_primos + 1
+
+#             print("*"*20)
+            
+#       print("se ingresaron ",numeros_no_primos ," numeros no primos")
+#       print("se ingresaron ",numeros_primos ," numero primos")
+#       break
+
+
+
+# #ejercicio numero 2
+cantidad_numeros = 0
+menu = True
+opcion = 0
+
+menor = 0
+mayor = 0
+import sys
+
+while menu == True:
+    try:
+        print("MENU PRINCIPAL")
+        print("1. ingresar numero")
+        print("2. mostrar numero mayor")
+        print("3. mostrar numero menor")
+        print("4. salir")
+        opcion = int(input("ingrese la opcion que desea: "))
+        
+    except Exception:
+        print("porfavor ingrese un numero entero")
+        break
+
+    if menu == True:
+        if opcion == 1:
+               
+           numero = int(input("ingrese un numero entre 0 y 100: "))
+           print("ingreso exitoso")
+           cantidad_numeros = cantidad_numeros + 1
+           
+           mayor += numero
+
+           menor -= mayor
+           print("*"*20)
+           continue
+         
+        if opcion == 2:
+           
+              
+                if cantidad_numeros != 0:
+                  print("el numero mayor ingresado hasta el momento es: ", mayor)
+         
+                else:
+                  print("no se han ingresado numeros: ")
+                  print("*"*20)
+                  continue
+                  
+        if opcion == 3:
+                if cantidad_numeros != 0:
+                  print("el numero menor ingresado hasta el momento es: ", menor)
+         
+                else:
+                  print("no se han ingresado numeros: ")
+                  print("*"*20)
+                  continue
+
+        if opcion == 4:
+           print("fin del programa adios")
+           print("saliendo..")
+           print("..")
+           sys.exit()
 
 
     
