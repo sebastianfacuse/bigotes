@@ -507,30 +507,30 @@
 #     except Exception:
 #         print("Solo puede ingresar numeros enteros")       
 ####
-suma_alumno=0
-suma_curso=0
-while True:
-    try:
-        cant_alumnos=int(input("porfavor ingrese la cantidad totales de alumnos " ))
-        break
-    except Exception:
-        print("porfavor ingrese solo numeros")
-for i in range (cant_alumnos):
-    prom_alumno=0
-    suma_alumno=0
-    print(f"ingrese la cantidad de notas del alumno {i+1}" )
-    n_notas=int(input())
-    for n in range (n_notas):
-        notas=float(input(f"ingrese la nota numero {n+1} " ))
-        suma_alumno+=notas
-    prom_alumno=suma_alumno/n_notas
-    suma_curso+=prom_alumno
-    print(f"el promedio del alumno es {prom_alumno}" )
-    if prom_alumno>=4.0:
-        print("el alumno aprovo")
-    else:
-        print("el alumno desaprovo")
-print(f"el promedio del curso es {suma_curso/cant_alumnos}" )
+# suma_alumno=0
+# suma_curso=0
+# while True:
+#     try:
+#         cant_alumnos=int(input("porfavor ingrese la cantidad totales de alumnos " ))
+#         break
+#     except Exception:
+#         print("porfavor ingrese solo numeros")
+# for i in range (cant_alumnos):
+#     prom_alumno=0
+#     suma_alumno=0
+#     print(f"ingrese la cantidad de notas del alumno {i+1}" )
+#     n_notas=int(input())
+#     for n in range (n_notas):
+#         notas=float(input(f"ingrese la nota numero {n+1} " ))
+#         suma_alumno+=notas
+#     prom_alumno=suma_alumno/n_notas
+#     suma_curso+=prom_alumno
+#     print(f"el promedio del alumno es {prom_alumno}" )
+#     if prom_alumno>=4.0:
+#         print("el alumno aprovo")
+#     else:
+#         print("el alumno desaprovo")
+# print(f"el promedio del curso es {suma_curso/cant_alumnos}" )
 #######
 #######
 # while True:
@@ -558,6 +558,50 @@ print(f"el promedio del curso es {suma_curso/cant_alumnos}" )
 #         break
 #     except Exception:
 #         print("Solo debe ingresar números enteros o decimales en caso de las notas")
+import os
+from os import system
+system("cls")
+lista_prod=[]
+while True:
+    print("""
+          1-agregar producto
+          2-eliminar un producto
+          3-listar productos
+          4-salir del sistema""")
+    op=int(input("->"))
+    match op:
+        case 1:
+            producto=input("ingrese el producto que desea agregar")
+            lista_prod.append(producto)
+            print(f"el producto {producto}, fue agregado exitosamente")
+            system("cls")
+        case 2:
+            cont = 1
+            for i in lista_prod:
+                print(f"{cont}.- {i}")
+                cont+=1
+            aux=int(input("eliminar ->"))-1
+            print(f"producto {lista_prod[aux]} aliminado exitosamente")
+            lista_prod.pop(aux)
+            input("presione enter para continuar")
+            system("cls")
+        case 3:
+            cont = 1
+            for i in lista_prod:
+                print(f"{cont}.-{i}")
+                cont+=1
+            print("presione enter para continuar")
+            system("cls")
+        case 4:
+            print("saliendo del sistemaa")
+            break
+        case _:
+            print("seleccion invalida, ingrese correctamente")
+
+
+
+
+
 
 
 
