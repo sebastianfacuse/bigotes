@@ -558,45 +558,45 @@
 #         break
 #     except Exception:
 #         print("Solo debe ingresar números enteros o decimales en caso de las notas")
-import os
-from os import system
-system("cls")
-lista_prod=[]
-while True:
-    print("""
-          1-agregar producto
-          2-eliminar un producto
-          3-listar productos
-          4-salir del sistema""")
-    op=int(input("->"))
-    match op:
-        case 1:
-            producto=input("ingrese el producto que desea agregar")
-            lista_prod.append(producto)
-            print(f"el producto {producto}, fue agregado exitosamente")
-            system("cls")
-        case 2:
-            cont = 1
-            for i in lista_prod:
-                print(f"{cont}.- {i}")
-                cont+=1
-            aux=int(input("eliminar ->"))-1
-            print(f"producto {lista_prod[aux]} aliminado exitosamente")
-            lista_prod.pop(aux)
-            input("presione enter para continuar")
-            system("cls")
-        case 3:
-            cont = 1
-            for i in lista_prod:
-                print(f"{cont}.-{i}")
-                cont+=1
-            print("presione enter para continuar")
-            system("cls")
-        case 4:
-            print("saliendo del sistemaa")
-            break
-        case _:
-            print("seleccion invalida, ingrese correctamente")
+# import os
+# from os import system
+# system("cls")
+# lista_prod=[]
+# while True:
+#     print("""
+#           1-agregar producto
+#           2-eliminar un producto
+#           3-listar productos
+#           4-salir del sistema""")
+#     op=int(input("->"))
+#     match op:
+#         case 1:
+#             producto=input("ingrese el producto que desea agregar")
+#             lista_prod.append(producto)
+#             print(f"el producto {producto}, fue agregado exitosamente")
+#             system("cls")
+#         case 2:
+#             cont = 1
+#             for i in lista_prod:
+#                 print(f"{cont}.- {i}")
+#                 cont+=1
+#             aux=int(input("eliminar ->"))-1
+#             print(f"producto {lista_prod[aux]} aliminado exitosamente")
+#             lista_prod.pop(aux)
+#             input("presione enter para continuar")
+#             system("cls")
+#         case 3:
+#             cont = 1
+#             for i in lista_prod:
+#                 print(f"{cont}.-{i}")
+#                 cont+=1
+#             print("presione enter para continuar")
+#             system("cls")
+#         case 4:
+#             print("saliendo del sistemaa")
+#             break
+#         case _:
+#             print("seleccion invalida, ingrese correctamente")
 
 
 
